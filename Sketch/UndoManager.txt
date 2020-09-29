@@ -1,0 +1,17 @@
+﻿UndoManagerについて
+
+UndoManager
+	Undoリストの管理を行う。
+	マルチユーザーによる同時操作をを想定して複数のUndoリストを管理するためにオブジェクト化している
+
+IUndoRecorder インターフェイス
+	個々のUndoを記録するためのインターフェイス
+	Undo()を呼び出すと元に戻す処理が行われる。
+	Redo()を呼び出すとやり直し処理が行われる。
+
+GroupUndoRecorder
+	複数のUndoをまとめるためのクラス。
+	通常は一度のUndoで複数のプロパティ変更を伴うため、このクラスでグループ化する。
+
+NullUndoManager
+	Undoしない場合にセットする
